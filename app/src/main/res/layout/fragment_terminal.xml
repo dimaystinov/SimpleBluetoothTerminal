@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#333131">
 
     <TextView
         android:id="@+id/receive_text"
@@ -14,7 +15,8 @@
         android:freezesText="true"
         android:gravity="bottom"
         android:scrollbars="vertical"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColorLink="#BFBCBC" />
 
     <View
         android:layout_width="match_parent"
@@ -28,17 +30,26 @@
 
         <EditText
             android:id="@+id/send_text"
-            android:layout_width="0dp"
+            android:layout_width="288dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:inputType="text|textNoSuggestions"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="#757575"/>
 
         <ImageButton
             android:id="@+id/send_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="61dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_send_white_24dp" />
+
+        <Button
+            android:id="@+id/send_btn1"
+            android:layout_width="61dp"
+            android:layout_height="wrap_content"
+            android:hint="Next"
+            />
+
     </LinearLayout>
 
 </LinearLayout>

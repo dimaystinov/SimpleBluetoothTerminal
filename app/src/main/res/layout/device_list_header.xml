@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/listDivider"
+    android:background="#3E3D3D"
+
     android:orientation="vertical">
 
     <TextView
@@ -13,5 +14,7 @@
         android:layout_marginBottom="12dp"
         android:gravity="center"
         android:text="@string/devices"
+        android:textColor="#E3E2E2"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 </LinearLayout>

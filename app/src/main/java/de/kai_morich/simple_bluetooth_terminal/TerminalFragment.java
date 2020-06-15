@@ -23,6 +23,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +42,12 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
     private boolean initialStart = true;
     private Connected connected = Connected.False;
 
+    Activity context;
+    private Button buttonFragment1;
+
+    public String message;
+
+    public byte[] bh;
     /*
      * Lifecycle
      */
@@ -49,6 +57,8 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
         setHasOptionsMenu(true);
         setRetainInstance(true);
         deviceAddress = getArguments().getString("device");
+
+
     }
 
     @Override
@@ -123,6 +133,24 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
         TextView sendText = view.findViewById(R.id.send_text);
         View sendBtn = view.findViewById(R.id.send_btn);
         sendBtn.setOnClickListener(v -> send(sendText.getText().toString()));
+
+
+        context=getActivity();
+
+        buttonFragment1 = (Button) view.findViewById(R.id.send_btn1);
+
+        buttonFragment1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                message = receiveText.getText().toString();
+                Intent intent=new Intent(context, FindBloetooth.class);
+                //add data to the Intent object
+                intent.putExtra("text", message);
+                //start the second activity
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -198,6 +226,9 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
     private void receive(byte[] data) {
         receiveText.append(new String(data));
     }
+    /*private void convert(byte[] data) {
+        receiveText.append(new String(data));
+    }*/
 
     private void status(String str) {
         SpannableStringBuilder spn = new SpannableStringBuilder(str+'\n');
@@ -222,6 +253,7 @@ public class TerminalFragment extends Fragment implements ServiceConnection, Ser
 
     @Override
     public void onSerialRead(byte[] data) {
+        bh = data;
         receive(data);
     }
 

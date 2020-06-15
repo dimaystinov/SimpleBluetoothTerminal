@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_user_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#C5C5C5"
+    android:padding="20dp">
+
+    <TextView
+        android:text="Enter your username and password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="63dp"
+        android:gravity="center"
+
+        android:textColor="#000"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#A1A1A1"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/email"
+        android:hint="Enter Your Login Here"
+        android:gravity="center"
+
+        android:bottomLeftRadius="7dp"
+
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#A1A1A1"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/password"
+        android:hint="Enter Your Password Here"
+        android:gravity="center"/>
+
+    <Button
+        android:text="Log In Here"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Login"
+        android:background="#A1A1A1"/>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="369dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="89dp"
+        android:background="#A1A1A1"
+        android:onClick="onMyButtonClick"
+        android:text="Next" />
+
+</RelativeLayout>
